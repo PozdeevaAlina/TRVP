@@ -1,0 +1,287 @@
+:root {
+    --tm-app-font-family: 'Overpass', serif;
+    --tm-app-header-font-size: clamp(16px, 3vw, 48px);
+    --tm-app-tasklist-font-size-large: clamp(14px, 1.6vw, 36px);
+    --tm-app-tasklist-font-size-medium: clamp(12px, 1.25vw, 28px);
+}
+
+:root {
+    --tm-app-background: #FFFFFF;
+    --tm-app-card-background: #F3F3F3;
+    --tm-app-card-color-1: #F4A839;
+    --tm-app-card-color-2: #ffc65e;
+    --tm-app-card-color-3: #ECF0F3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--tm-app-font-family), sans-serif;
+    font-weight: 400;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 1rem;
+}
+
+button {
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+select {
+    width: 100%;
+    border: none;
+    background: inherit;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+option {
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5rem;
+    height: 12vh;
+    font-size: var(--tm-app-header-font-size);
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+main {
+    padding: 0 2% 2% 2%;
+}
+
+.reservations-list {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    column-gap: calc(8% / 3);
+}
+
+.session {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    padding: 8px;
+    width: 420px;
+    border-radius: 1rem;
+    background-color: var(--tm-app-card-background);
+    box-shadow: 4px 4px 8px 0 black;
+}
+
+.main-info {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 8px;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+
+    img {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: space-between;
+    background-color: var(--tm-app-card-color-2);
+    padding: 8px;
+    border-radius: 1rem;
+
+    .inputs {
+        display: none;
+    }
+}
+
+.title {
+    font-weight: 600;
+
+    label {
+        font-weight: 600;
+    }
+}
+
+.reservations-cont {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.reservation-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 1rem;
+    background-color: var(--tm-app-card-color-2);
+    padding: 8px 8px;
+    margin-top: 8px;
+    gap: 0.5rem;
+
+    & > div {
+        display: flex;
+        gap: 0.25rem;
+    }
+
+    .inputs {
+        display: none;
+        & > select {
+            color: white;
+        }
+    }
+}
+
+.reservation-buttons {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    & > img {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+}
+
+.add-session-btn {
+    border: none;
+    font-size: 18px;
+    width: 100%;
+    background-color: var(--tm-app-card-color-2);
+    padding: 8px;
+    border-radius: 1rem;
+    align-self: center;
+}
+
+.edit-info-btn {
+    border: none;
+    font-size: 16px;
+    width: 80%;
+    background-color: var(--tm-app-card-color-3);
+    padding: 8px;
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+    align-self: center;
+}
+
+.delete-session-btn {
+    border: none;
+    background: none;
+    font-size: 20px;
+}
+
+.add-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.add-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    width: 420px;
+    border-radius: 1rem;
+    background-color: var(--tm-app-card-background);
+    box-shadow: 2px 2px 4px 0 black;
+    font-size: 20px;
+}
+
+.modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-window {
+    background-color: var(--tm-app-card-background);
+    height: fit-content;
+    border-radius: 1rem;
+    padding: 8px;
+}
+
+.content {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    width: 384px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    option {
+        padding: 4px;
+        background: white;
+    }
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.25rem;
+    margin-top: 8px;
+
+    & > img {
+        height: 2rem;
+        width: 2rem;
+    }
+}
+
+.editable {
+    p:not(.title) {
+        display: none;
+    }
+
+    .inputs {
+        display: unset;
+    }
+
+    .not-editable {
+        display: none;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
